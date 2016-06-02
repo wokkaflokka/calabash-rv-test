@@ -1,0 +1,32 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/ActionBarStyle</item>
+        <item name="actionBarTheme">@style/ActionBarStyle</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="background">@color/blue</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+    </style>
+
+
+    <style name="SpinnerStyle" parent="Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+        <item name="android:popupBackground">#fafafa</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:dropDownSelector">?android:selectableItemBackground</item>
+        <item name="android:listSelector">#f4f4f4</item>
+        <item name="android:divider">@null</item>
+        <item name="android:overlapAnchor">true</item>
+        <item name="android:dropDownVerticalOffset">10dp</item>
+    </style>
+
+</resources>
