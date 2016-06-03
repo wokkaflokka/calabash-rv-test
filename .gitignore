@@ -10,3 +10,8 @@
 
 .*~
 *~
+
+vendor/
+.bundle
+
+calabash/test_servers/

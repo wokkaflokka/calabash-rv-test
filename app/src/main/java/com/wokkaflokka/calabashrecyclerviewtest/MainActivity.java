@@ -1,5 +1,6 @@
 package com.wokkaflokka.calabashrecyclerviewtest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -19,7 +20,7 @@ import com.wokkaflokka.calabashrecyclerviewtest.dtos.Issue707Model;
 
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     private Toolbar toolbar;
     private Spinner toolbarSpinner;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        photosAdapter = new PhotosAdapter(this, new PublishedPhotoConfiguration(model));
+        photosAdapter = new PhotosAdapter(this, this, new PublishedPhotoConfiguration(model));
         layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
 
         AlphaInAnimationAdapter animationAdapter = new AlphaInAnimationAdapter(photosAdapter);
@@ -79,5 +80,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = DummyActivity.getIntent(this);
+        startActivity(intent);
     }
 }

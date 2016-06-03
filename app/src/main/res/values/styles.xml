@@ -18,7 +18,6 @@
         <item name="actionMenuTextColor">@android:color/white</item>
     </style>
 
-
     <style name="SpinnerStyle" parent="Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
         <item name="android:popupBackground">#fafafa</item>
         <item name="android:background">?android:selectableItemBackground</item>

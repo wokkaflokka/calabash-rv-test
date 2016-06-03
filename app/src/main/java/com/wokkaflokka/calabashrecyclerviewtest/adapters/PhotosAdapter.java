@@ -20,13 +20,13 @@ public class PhotosAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     private PhotoConfiguration configuration;
     private final LayoutInflater inflater;
-    private final Context context;
+    private final View.OnClickListener listener;
 
 
-    public PhotosAdapter(Context context, PhotoConfiguration configuration) {
+    public PhotosAdapter(Context context, View.OnClickListener listener, PhotoConfiguration configuration) {
         this.configuration = configuration;
         inflater = LayoutInflater.from(context);
-        this.context = context;
+        this.listener = listener;
     }
 
     @Override
@@ -38,6 +38,8 @@ public class PhotosAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         caption.setText(image.getCaption());
 
         Picasso.with(holder.itemView.getContext()).load(image.getUrl()).into(imageView);
+
+        holder.itemView.setOnClickListener(listener);
     }
 
     @Override
